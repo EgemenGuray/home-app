@@ -23,4 +23,4 @@ This repo holds what the two share: the plan, branding, widget and screen specs,
 
 ## Plan
 
-See `docs/plan.md` (screens, widgets, order of work) and `docs/widgets.md`.
+See `docs/plan.md` (screens, widgets, order of work), `docs/widgets.md`, `docs/agents-tab.md` (Phase 1 task board, approvals signed in the Secure Enclave, login release) and `docs/voice-mode.md` (Phase 2).
