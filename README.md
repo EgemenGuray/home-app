@@ -32,6 +32,10 @@ This repo holds what the two share: the plan, branding, widget and screen specs,
 4. Apple Developer Program (about CA$141 a year) for TestFlight, and a Google Play developer account (one-time, about CA$35) for the internal track.
 5. `./scripts/sync-upstream.sh <path-to-mirror>` monthly to merge upstream releases.
 
+## Tests
+
+`pip install -r requirements-test.txt && pytest` tests the mirror scripts. `create-mirrors.sh` runs against a fake `gh`, and the tests check that the mirrors are private and that only branches and tags are copied. `sync-upstream.sh` runs against real throwaway git repos, and the tests check that it merges onto a review branch, stops on conflicts and never pushes upstream. CI runs them and shellcheck on every push.
+
 ## Plan
 
 See `docs/plan.md` (screens, widgets, order of work), `docs/widgets.md`, `docs/agents-tab.md` (Phase 1 task board, approvals signed in the Secure Enclave, login release) and `docs/voice-mode.md` (Phase 2).

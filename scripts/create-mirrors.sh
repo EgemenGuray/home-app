@@ -3,8 +3,12 @@
 # Run on your laptop with `gh auth login` done. Safe to re-run: skips repos that exist.
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")/.." && pwd)"
-# shellcheck disable=SC1091
-source "$HERE/branding/brand.env"
+BRAND_ENV="${BRAND_ENV:-$HERE/branding/brand.env}"
+[[ -f "$BRAND_ENV" ]] || { echo "Copy branding/brand.env.example to branding/brand.env and fill it in." >&2; exit 1; }
+# shellcheck disable=SC1090
+source "$BRAND_ENV"
+: "${GITHUB_OWNER:?set GITHUB_OWNER}" "${IOS_REPO:?set IOS_REPO}" "${ANDROID_REPO:?set ANDROID_REPO}"
+[[ "$GITHUB_OWNER" != your-github-login ]] || { echo "Set GITHUB_OWNER in $BRAND_ENV to your GitHub login." >&2; exit 1; }
 command -v gh >/dev/null || { echo "Install the GitHub CLI (brew install gh) and run gh auth login." >&2; exit 1; }
 
 mirror() {
