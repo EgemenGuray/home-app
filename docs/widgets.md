@@ -11,4 +11,4 @@
 | Actionable notifications | iOS, Android | Doorbell, laundry done, reminder (done / snooze 10 min), door left open |
 | Watch complication (optional) | watchOS | Scenes |
 
-Entity ids come from `home-assistant-config/docs/entities.md`; widgets call HA scripts (`script.good_night`, `script.scene_leaving`), never raw device services, so the house logic stays in one place.
+Widgets are the same in both setups: they talk only to HA on the hub Mac, so they keep working if the Studio is off. Entity ids come from `home-assistant-config/docs/entities.md`; widgets call HA scripts (`script.good_night`, `script.scene_leaving`), never raw device services, so the house logic stays in one place.

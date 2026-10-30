@@ -1,11 +1,11 @@
 # Agents tab and phone approvals (E1.6, E1.7)
 
-The app is the only place anything risky can be approved. The server side is in home-agents (`approvals.py`, `broker.py`, `api.py`); this is the app's half of the contract.
+The app is the only place anything risky can be approved. The approval and login flows below are identical in both setups. Only the agent service's address changes (the hub Mac with the Mac mini only, the Studio with the Mac mini + Mac Studio), and the broker stays on the hub Mac either way. The server side is in home-agents (`approvals.py`, `broker.py`, `api.py`); this is the app's half of the contract.
 
 ## Screens
 
 - **Task board:** queued, running, waiting for you, done, failed (`GET /v1/jobs`).
-- **Live view** per agent: noVNC in a web view in Phase 1, WebRTC in Phase 2. Take over mouse and keyboard; the agent resumes with a note of what you did.
+- **Live view** per agent. **Mac mini only:** noVNC in a web view, served by the rented workspace VM; Linux desktops only. **Mac mini + Mac Studio:** WebRTC from the Studio, including the macOS VMs. Take over mouse and keyboard; the agent resumes with a note of what you did.
 - **Pause, resume, kill.** Kill destroys the workspace and keeps the log.
 - **Approvals:** a push with Approve and Deny. Shows the job, the site, the exit IP and country, and the planned action. Purchases show merchant, item and amount in CAD.
 - **Audit search** over tool calls, messages, approvals, logins and takeovers.

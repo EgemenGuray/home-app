@@ -2,7 +2,7 @@
 
 ## Order of work
 
-1. **S0.8.1 Builds on your phones.** Mirrors created; rename the app and bundle ids from `branding/brand.env`; own push setup (Firebase project for Android, APNs key for iOS; both keys stay out of git); TestFlight and the Android internal track. Point the server at Home Assistant's Tailscale address so it works away from home.
+1. **S0.8.1 Builds on your phones.** Mirrors created; rename the app and bundle ids from `branding/brand.env`; own push setup (Firebase project for Android, APNs key for iOS; both keys stay out of git); TestFlight and the Android internal track. Point the server at Home Assistant's Tailscale address so it works away from home. HA is on the hub Mac in both setups.
 2. **S0.8.2 Home tab.** Rooms, scenes and device tiles live over HA's WebSocket API. Start from the Companion's existing native views; media cards for the TV, soundbars, Apple TV and Plex.
 3. **S0.8.3 Assistant tab.** Text chat and push-to-talk to the same Claude agent as the voice devices, using HA's Assist API (`assist_pipeline/run`), which the Companion apps already speak. One history across voice and app.
 4. **S0.8.4 Widgets and quick controls.** See `widgets.md`.
@@ -16,5 +16,5 @@
 
 ## Later phases
 
-- Phase 1: Agents tab (task board, live view via noVNC, approvals with Face ID signed by a Secure Enclave key, take over, kill) and vault login release (E1.6, E1.7).
-- Phase 2: hands-free voice and intercom over LiveKit.
+- Phase 1, both setups: Agents tab (task board, live view via noVNC, approvals with Face ID signed by a Secure Enclave key, take over, kill) and vault login release (E1.6, E1.7). It talks to the agent service on the hub Mac (Mac mini only) or the Studio (Mac mini + Mac Studio), so the server address is a setting.
+- Phase 2, **Mac mini + Mac Studio only:** hands-free voice and intercom over LiveKit.

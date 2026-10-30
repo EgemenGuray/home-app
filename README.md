@@ -2,6 +2,17 @@
 
 The custom phone app and widgets (roadmap **E0.8**): one app on iOS and Android, built from the Home Assistant Companion apps so login, push notifications, widgets and Tailscale access come for free.
 
+## Two setups
+
+The app is the same build for both. It reaches everything over Tailscale, and the server addresses are settings in the app.
+
+| | **Mac mini only** | **Mac mini + Mac Studio** |
+|---|---|---|
+| Home and Assistant tabs, widgets | HA on the hub Mac | HA on the hub Mac (unchanged) |
+| Agents tab (Phase 1) | Agent service on the hub Mac; live view of Linux workspaces on the rented VM | Agent service on the Studio; live view also of macOS VMs |
+| Hands-free voice and intercom | Not available; push-to-talk through HA Assist | LiveKit to the Studio's voice server (`docs/voice-mode.md`) |
+| Switching | Not applicable | Change the agent server address in settings; nothing to rebuild |
+
 ## Why mirrors, not GitHub forks
 
 A GitHub fork of a public repo is always public. To keep the app private, the Companion repos are **mirrored** into two private repos, with the upstream kept as a second remote so fixes can be merged in:
