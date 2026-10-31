@@ -7,7 +7,7 @@ The app is the only place anything risky can be approved. The approval and login
 - **Task board:** queued, running, waiting for you, done, failed (`GET /v1/jobs`).
 - **Live view** per agent. **Mac mini only:** noVNC in a web view, served by the rented workspace VM; Linux desktops only. **Mac mini + Mac Studio:** WebRTC from the Studio, including the macOS VMs. Take over mouse and keyboard; the agent resumes with a note of what you did.
 - **Pause, resume, kill.** Kill destroys the workspace and keeps the log.
-- **Approvals:** a push with Approve and Deny. Shows the job, the site, the exit IP and country, and the planned action. Purchases show merchant, item and amount in CAD.
+- **Approvals:** one push per request, sent by the agent service through HA's `notify.owner_phone`. Tapping it opens `homeapp://approvals/<id>` straight on that request, and Face ID signs Approve; there is no second confirmation (`design-system.md`). Shows the job, the site, the exit IP and country, and the planned action in plain words. Purchases show merchant, item and amount in CAD. Once signed, the action runs at once, and the result is spoken in the room that asked or pushed back to the phone.
 - **Audit search** over tool calls, messages, approvals, logins and takeovers.
 
 ## Signing an approval
