@@ -16,5 +16,5 @@
 
 ## Later phases
 
-- Phase 1, both setups: Agents tab (task board, live view via noVNC, approvals with Face ID signed by a Secure Enclave key, take over, kill) and vault login release (E1.6, E1.7). It talks to the agent service on the hub Mac (Mac mini only) or the Studio (Mac mini + Mac Studio), so the server address is a setting.
+- Phase 1, both setups: Agents tab (task board, screen share with touch-to-take-over and hand back through the screen relay, approvals with Face ID signed by a Secure Enclave key, kill) and vault login release (E1.6, E1.7). It talks to the agent service on the hub Mac (Mac mini only) or the Studio (Mac mini + Mac Studio), so the server address is a setting.
 - Phase 2, **Mac mini + Mac Studio only:** hands-free voice and intercom over LiveKit.

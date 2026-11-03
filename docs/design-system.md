@@ -30,4 +30,4 @@ Warm neutral backgrounds, one green (`primary`) for "on and fine", amber (`accen
 | Approval card | Title (`summary`), job and agent, exit route and country, amount in CAD for purchases, time left. Buttons: Approve (primary, Face ID) and Deny |
 | Task row | Title, state chip (queued, running, waiting for you in amber, done, failed in red), last step, time |
 | Assistant bubble | Your text right-aligned on `surface_alt`; the assistant left-aligned on `surface`; approval chips inline |
-| Take-over bar | Shown during live view: Pause, Take over, Hand back, Stop, with the elapsed time |
+| Take-over bar | Shown above an agent's screen: task, who drives, last three steps, Take over, Pause, Hand back with a note, Stop, and the elapsed time. The screen edge glows `primary` while the agent drives, `accent` while you do, grey when paused (`agents-tab.md`) |
